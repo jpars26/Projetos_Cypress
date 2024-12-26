@@ -26,7 +26,6 @@ Cypress.Commands.add('login', (email, senha) => {
         cy.get('[data-test="inputLoginEmail"]').type(email);
         cy.get('[data-test="inputLoginSenha"]').type(senha, { log: false});
         cy.get('[data-test="botaoTeste"]').click();
-        cy.location('pathname').should('eq', '/login');
         cy.location('pathname').should('eq', '/dashboard');
     })
 
