@@ -50,6 +50,23 @@ Cypress.Commands.add('cadastrarEspecialista', (nome, email, senha, especialidade
     cy.get('[data-test="inputEspecialistaEstado"]').type(estado);
 })
 
+Cypress.Commands.add('loginApi', (email, senha) => {
+    cy.request({
+        method: 'POST',
+        url: Cypress.env('api_login'),
+        body: {
+            email: email,
+            senha: senha
+        }
+    }).then(response => {
+        expect(response.status).to.eq(200);
+        expect(response.body.auth).to.be.true;
+        expect(response.body.rota).to.eq('/clinica');
+        expect(response.body.token).to.exist;
+        expect(response.body.token).as('token');
+    })
+})
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
