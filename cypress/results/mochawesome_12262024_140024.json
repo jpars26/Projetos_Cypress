@@ -1,0 +1,221 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-12-26T17:00:13.871Z",
+    "end": "2024-12-26T17:00:24.233Z",
+    "duration": 10362,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "21712b55-d49b-40bd-a747-793c013455a7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\dashborad-teste.cy.js",
+      "file": "cypress\\e2e\\dashborad-teste.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2d3967fe-8a8d-4b55-9086-c2cec8bc2dec",
+          "title": "Pagina Dashboard",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "1008f3f9-27f0-4220-9ada-169bc3710b07",
+              "title": "Redirecionamento pagina dashboard",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verificar a pagina dashboard",
+                  "fullTitle": "Pagina Dashboard Redirecionamento pagina dashboard Verificar a pagina dashboard",
+                  "timedOut": null,
+                  "duration": 3291,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visit('/dashboard');\ncy.url().should('eq', 'http://localhost:3000/dashboard');",
+                  "err": {},
+                  "uuid": "9d8addff-0e9d-41c2-9c59-ef1d3fcea22e",
+                  "parentUUID": "1008f3f9-27f0-4220-9ada-169bc3710b07",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Com o Usuario logado Cadastro Especialista",
+                  "fullTitle": "Pagina Dashboard Redirecionamento pagina dashboard Com o Usuario logado Cadastro Especialista",
+                  "timedOut": null,
+                  "duration": 290,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visit('/dashboard');\ncy.url().should('eq', 'http://localhost:3000/dashboard');\ncy.contains('Cadastrar especialista').should('be.visible').click();",
+                  "err": {},
+                  "uuid": "ad4b0111-bccf-4319-8097-2ad2fae797ad",
+                  "parentUUID": "1008f3f9-27f0-4220-9ada-169bc3710b07",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "9d8addff-0e9d-41c2-9c59-ef1d3fcea22e",
+                "ad4b0111-bccf-4319-8097-2ad2fae797ad"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 3581,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "ef99acdf-12af-4ec3-9a29-c49247d0bd79",
+              "title": "Preencher os dados do especialista",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verifica se o checkbox \"Atende por plano?\" está desmarcado",
+                  "fullTitle": "Pagina Dashboard Preencher os dados do especialista Verifica se o checkbox \"Atende por plano?\" está desmarcado",
+                  "timedOut": null,
+                  "duration": 290,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visit('/dashboard');\ncy.contains('Cadastrar especialista').should('be.visible').click();\n//Verifica se o checkbox está desmarcado - no should verifica se ele tem atributo, se tem a fonte arial e o texto é compativel\ncy.get('[type=\"checkbox\"]').should('have.attr', 'aria-label', 'Atende por plano?').and('not.be.checked');",
+                  "err": {},
+                  "uuid": "38eea17d-8b5b-452c-857a-27d365630c8c",
+                  "parentUUID": "ef99acdf-12af-4ec3-9a29-c49247d0bd79",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Seleciona alguns checkbox e verifica se esles estão funcionando e nao desabilitados",
+                  "fullTitle": "Pagina Dashboard Preencher os dados do especialista Seleciona alguns checkbox e verifica se esles estão funcionando e nao desabilitados",
+                  "timedOut": null,
+                  "duration": 776,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visit('/dashboard');\ncy.contains('Cadastrar especialista').should('be.visible').click();\ncy.get('[type=\"checkbox\"]').check();\ncy.get('form').find('input[type=\"checkbox\"]').should('be.checked').and('not.be.disabled');\ncy.get('[type=\"checkbox\"]').check(['Unimed', 'Biovida', 'Bradesco']);",
+                  "err": {},
+                  "uuid": "4941f110-9f95-47da-96cf-f73502b2ebfd",
+                  "parentUUID": "ef99acdf-12af-4ec3-9a29-c49247d0bd79",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Adicionar os dados especialistas",
+                  "fullTitle": "Pagina Dashboard Preencher os dados do especialista Adicionar os dados especialistas",
+                  "timedOut": null,
+                  "duration": 5371,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@especialistas').then(dados => {\n  const especialista = dados.especialistas[1];\n  cy.cadastrarEspecialista(especialista.nome, especialista.email, especialista.senha, especialista.especialidade, especialista.crm, especialista.telefone, especialista.imagem, especialista.cep, especialista.rua, especialista.numero, especialista.complemento, especialista.estado);\n  cy.get('[type=\"checkbox\"]').check();\n  //Utiliza o scroll da pagina para verificar \n  cy.get('[type=\"checkbox\"]').last().scrollIntoView({\n    easing: 'linear'\n  });\n  //Verifica se o formulario está visivel e percorre todos os filhos desse formulario\n  cy.get('.MuiFormGroup-root').children().each($checkbox => {\n    cy.wrap($checkbox).should('be.visible');\n  });\n  cy.get('[type=\"checkbox\"]').check(['Unimed', 'Amil', 'Bradesco']);\n  cy.get('form > .sc-bcXHqe').click();\n});",
+                  "err": {},
+                  "uuid": "3e090e85-bade-442a-83c3-b85039031367",
+                  "parentUUID": "ef99acdf-12af-4ec3-9a29-c49247d0bd79",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "38eea17d-8b5b-452c-857a-27d365630c8c",
+                "4941f110-9f95-47da-96cf-f73502b2ebfd",
+                "3e090e85-bade-442a-83c3-b85039031367"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 6437,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
