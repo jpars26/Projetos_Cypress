@@ -36,7 +36,7 @@ jobs:
 
        run: |
 
-         cd server
+         cd Cypress_Auto_Web_CI/server
 
          npm install
 
@@ -58,7 +58,7 @@ jobs:
 
        run: |
 
-         cd web
+         cd Cypress_Auto_Web_CI/web
 
          npm install
 
