@@ -63,6 +63,10 @@ jobs:
          npm install
 
          npm start &
+     - name: Install Cypress Dependencies         
+       run: |
+
+        npm ci
 
      - name: Run Cypress Tests
 
