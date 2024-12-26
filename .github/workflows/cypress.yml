@@ -24,10 +24,10 @@ jobs:
 
        uses: actions/checkout@v4
 
-     # Limpar o cache antes de instalar dependências
-     - name: Clear Cypress Cache
-       
-       run: rm -rf ~/.cache/Cypress
+     - name: Checkout
+
+       uses: actions/checkout@v4
+
 
      - name: Start Server BackEnd
 
@@ -65,6 +65,11 @@ jobs:
        run: |
 
         npm ci
+
+     # Limpar o cache antes de instalar dependências
+     - name: Clear Cypress Cache
+       
+       run: rm -rf ~/.cache/Cypress
 
      - name: Run Cypress Tests
 
