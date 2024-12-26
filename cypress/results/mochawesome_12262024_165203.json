@@ -1,0 +1,226 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-12-26T19:50:59.631Z",
+    "end": "2024-12-26T19:52:03.718Z",
+    "duration": 64087,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 4,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "1cd948dd-d5ae-421f-8a90-5a9de2dec17e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\dashborad-teste.cy.js",
+      "file": "cypress\\e2e\\dashborad-teste.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ce38a651-36cf-40ca-b782-04bd7b0485af",
+          "title": "Pagina Dashboard",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "0fdf6f59-c3fd-4a70-92bd-eb6623d4901c",
+              "title": "Redirecionamento pagina dashboard",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verificar a pagina dashboard",
+                  "fullTitle": "Pagina Dashboard Redirecionamento pagina dashboard Verificar a pagina dashboard",
+                  "timedOut": null,
+                  "duration": 63719,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visit('/dashboard');\ncy.url().should('eq', 'http://localhost:3000/dashboard');",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 60000ms: expected '/login' to equal '/dashboard'\n\nThis error occurred while creating the session. Because the session setup failed, we failed the test.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Pagina Dashboard`",
+                    "estack": "AssertionError: Timed out retrying after 60000ms: expected '/login' to equal '/dashboard'\n\nThis error occurred while creating the session. Because the session setup failed, we failed the test.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Pagina Dashboard`\n    at Object.eval [as setup] (webpack://cypress_auto_web_ci/./cypress/support/commands.js:29:32)",
+                    "diff": "- '\\'/login\\''\n+ '\\'/dashboard\\''\n"
+                  },
+                  "uuid": "137a62c3-06f6-4d9b-a062-43538ced12e6",
+                  "parentUUID": "0fdf6f59-c3fd-4a70-92bd-eb6623d4901c",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Com o Usuario logado Cadastro Especialista",
+                  "fullTitle": "Pagina Dashboard Redirecionamento pagina dashboard Com o Usuario logado Cadastro Especialista",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visit('/dashboard');\ncy.url().should('eq', 'http://localhost:3000/dashboard');\ncy.contains('Cadastrar especialista').should('be.visible').click();",
+                  "err": {},
+                  "uuid": "3958e62f-e8b4-4ac5-88d4-6e547dd08fad",
+                  "parentUUID": "0fdf6f59-c3fd-4a70-92bd-eb6623d4901c",
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "137a62c3-06f6-4d9b-a062-43538ced12e6"
+              ],
+              "pending": [],
+              "skipped": [
+                "3958e62f-e8b4-4ac5-88d4-6e547dd08fad"
+              ],
+              "duration": 63719,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "c7fbd6fd-315e-485a-99a1-17928bf67f05",
+              "title": "Preencher os dados do especialista",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verifica se o checkbox \"Atende por plano?\" está desmarcado",
+                  "fullTitle": "Pagina Dashboard Preencher os dados do especialista Verifica se o checkbox \"Atende por plano?\" está desmarcado",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visit('/dashboard');\ncy.contains('Cadastrar especialista').should('be.visible').click();\n//Verifica se o checkbox está desmarcado - no should verifica se ele tem atributo, se tem a fonte arial e o texto é compativel\ncy.get('[type=\"checkbox\"]').should('have.attr', 'aria-label', 'Atende por plano?').and('not.be.checked');",
+                  "err": {},
+                  "uuid": "4076ed1c-af3c-4478-80df-4bdc469fec4e",
+                  "parentUUID": null,
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "Seleciona alguns checkbox e verifica se esles estão funcionando e nao desabilitados",
+                  "fullTitle": "Pagina Dashboard Preencher os dados do especialista Seleciona alguns checkbox e verifica se esles estão funcionando e nao desabilitados",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visit('/dashboard');\ncy.contains('Cadastrar especialista').should('be.visible').click();\ncy.get('[type=\"checkbox\"]').check();\ncy.get('form').find('input[type=\"checkbox\"]').should('be.checked').and('not.be.disabled');\ncy.get('[type=\"checkbox\"]').check(['Unimed', 'Biovida', 'Bradesco']);",
+                  "err": {},
+                  "uuid": "cdda37ca-48c5-4e75-89de-4e657bace196",
+                  "parentUUID": null,
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "Adicionar os dados especialistas",
+                  "fullTitle": "Pagina Dashboard Preencher os dados do especialista Adicionar os dados especialistas",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('@especialistas').then(dados => {\n  const especialista = dados.especialistas[1];\n  cy.cadastrarEspecialista(especialista.nome, especialista.email, especialista.senha, especialista.especialidade, especialista.crm, especialista.telefone, especialista.imagem, especialista.cep, especialista.rua, especialista.numero, especialista.complemento, especialista.estado);\n  cy.get('[type=\"checkbox\"]').check();\n  //Utiliza o scroll da pagina para verificar \n  cy.get('[type=\"checkbox\"]').last().scrollIntoView({\n    easing: 'linear'\n  });\n  //Verifica se o formulario está visivel e percorre todos os filhos desse formulario\n  cy.get('.MuiFormGroup-root').children().each($checkbox => {\n    cy.wrap($checkbox).should('be.visible');\n  });\n  cy.get('[type=\"checkbox\"]').check(['Unimed', 'Amil', 'Bradesco']);\n  cy.get('form > .sc-bcXHqe').click();\n});",
+                  "err": {},
+                  "uuid": "58caa89d-8055-41db-a685-a4fca636f745",
+                  "parentUUID": null,
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [],
+              "pending": [],
+              "skipped": [
+                "4076ed1c-af3c-4478-80df-4bdc469fec4e",
+                "cdda37ca-48c5-4e75-89de-4e657bace196",
+                "58caa89d-8055-41db-a685-a4fca636f745"
+              ],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

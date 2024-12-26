@@ -1,3 +1,4 @@
+import { fakerPT_BR as faker } from "@faker-js/faker";
 describe('Página de cadastro', () => {
     beforeEach(() => {
         cy.visit('/');
@@ -12,10 +13,10 @@ describe('Página de cadastro', () => {
     })
         
     context('Primeira parte da sessão de cadastro', () => {
-
+        let senha = faker.internet.password({ length: 8, memorable: true });
         it('Digita dados da clínica e exibe a área para inserção de dados técnicos', () => {
             cy.get('[href="/cadastro"]').click();
-            cy.cadastro('Joao','12.156.812/0001-02','jpars@gmail.com','Senha1234');
+            cy.cadastro(faker.internet.username(),faker.string.numeric(14),faker.internet.email(),senha);
             cy.contains('h2', 'Agora, os dados técnicos:').should('be.visible');
             cy.get('.sc-laZRCg').should('exist').should('be.visible');
           
@@ -23,10 +24,11 @@ describe('Página de cadastro', () => {
     })
 
     context('Segunda parte da sessao inserindo dados tecnicos', () =>{
+        let senha = faker.internet.password({ length: 8, memorable: true });
         it('Cadastro completo da clinica!', () =>{
             cy.get('[href="/cadastro"]').click();
-            cy.cadastro('Joao','12.156.812/0001-02','jpars@gmail.com','Senha1234');
-            cy.dados_tecnicos('9999999','37550000','rua aleatoria', '23', 'casa', 'MG');
+            cy.cadastro(faker.internet.username(),faker.string.numeric(14),faker.internet.email(),senha);
+            cy.dados_tecnicos(faker.phone.number(),faker.location.zipCode(),faker.location.street(), faker.location.buildingNumber(), faker.location.secondaryAddress(), faker.location.state({ abbreviated: true }));
             cy.location('pathname').should('equal', '/login');
         })
     })
