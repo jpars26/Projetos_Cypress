@@ -1,5 +1,11 @@
 # Projetos_Cypress
 
+![Cypress](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
+![Mochawesome](https://img.shields.io/badge/Mochawesome-8D6748?style=for-the-badge&logo=mocha&logoColor=white)
+
 Este projeto foi clonado e feito para estudo e prática de testes automatizados utilizando Cypress. O objetivo é criar um conjunto de testes end-to-end (E2E) para garantir a qualidade e funcionalidade de uma aplicação web.
 
 ## Tecnologias Utilizadas
